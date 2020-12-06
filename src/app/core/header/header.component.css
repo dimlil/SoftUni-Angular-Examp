@@ -1,10 +1,26 @@
 .header{
     background-color: #ffffff;
     border-bottom: #eeeeee 1px solid;
-    padding: 5px;
-    padding-left: 20px;
     display: flex;
     align-items: center;
     padding: 20px;
     justify-content: space-between;
+}
+button p{
+    color: white;
+    font-family: cursive;
+}
+button {
+
+    background-color: #FA8A72;
+    border-radius: 25px;
+    border: none;
+    padding: 0px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-color: #FA8A72 !important;
 }
