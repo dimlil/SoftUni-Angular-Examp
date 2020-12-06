@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "SoftUni-Angular-Examp"
+  "defaultProject": "SoftUni-Angular-Examp",
+  "cli": {
+    "analytics": "6ebf62a6-4cc2-413e-a2a4-e96bd8d3cbe1"
+  }
 }
