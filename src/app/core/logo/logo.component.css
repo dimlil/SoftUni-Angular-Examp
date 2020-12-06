@@ -3,3 +3,6 @@
     height: 50px;
     object-fit: contain;
 }
+.logo:hover{
+    cursor: pointer;
+}
