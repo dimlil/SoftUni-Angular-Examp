@@ -1,1 +1,35 @@
-<p>register works!</p>
+<form action="#" method="post" class="form">
+
+    <div>
+        <h1>Register</h1>
+    </div>
+
+    <div>
+        <input id="inputUsername" type="text" name="username" placeholder="Username" required="" />
+        <label htmlFor="inputUsername">Username</label>
+    </div>
+
+    <div>
+        <input id="inputEmail" type="email" name="password" placeholder="Email" required="" />
+        <label htmlFor="inputEmail">Email</label>
+    </div>
+
+    <div>
+        <input id="inputPassword" type="password" placeholder="Password(Min 6)" required="" />
+        <label htmlFor="inputPassword">Password</label>
+    </div>
+
+    <div>
+        <input id="inputRePassword" type="password" name="rePassword"
+            placeholder="Re-Password" required="" />
+        <label htmlFor="inputRePassword">Re-Password</label>
+    </div>
+
+    <button class="btn" type="submit">Sign Up</button>
+
+    <div>
+        <p class="text"> Already have account? Then just
+            <a routerLink="/login">Login</a>
+        </p>
+    </div>
+</form>
