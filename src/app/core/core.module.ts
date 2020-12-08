@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LogoComponent } from './logo/logo.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from "@angular/forms"
 
 
 
@@ -13,9 +14,10 @@ import { RouterModule } from '@angular/router';
   declarations: [HeaderComponent, HomeComponent, LoginComponent, RegisterComponent, LogoComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
-  exports:[
+  exports: [
     HeaderComponent
   ]
 })

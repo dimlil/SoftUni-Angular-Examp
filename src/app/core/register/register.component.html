@@ -1,31 +1,30 @@
-<form action="#" method="post" class="form">
+<form action="#" method="post" class="form" #registerForm="ngForm" (ngSubmit)="registerHandler(registerForm.value)">
 
     <div>
         <h1>Register</h1>
     </div>
 
     <div>
-        <input id="inputUsername" type="text" name="username" placeholder="Username" required="" />
+        <input id="inputUsername" type="text" name="username" placeholder="Username" required ngModel />
         <label htmlFor="inputUsername">Username</label>
     </div>
 
     <div>
-        <input id="inputEmail" type="email" name="password" placeholder="Email" required="" />
+        <input id="inputEmail" type="email" name="email" placeholder="Email" required ngModel email />
         <label htmlFor="inputEmail">Email</label>
     </div>
 
     <div>
-        <input id="inputPassword" type="password" placeholder="Password(Min 6)" required="" />
+        <input id="inputPassword" type="password" name="password" placeholder="Password(Min 6)" required ngModel minlength="6"/>
         <label htmlFor="inputPassword">Password</label>
     </div>
 
     <div>
-        <input id="inputRePassword" type="password" name="rePassword"
-            placeholder="Re-Password" required="" />
+        <input id="inputRePassword" type="password" name="rePassword" placeholder="Re-Password" required ngModel minlength="6"/>
         <label htmlFor="inputRePassword">Re-Password</label>
     </div>
 
-    <button class="btn" type="submit">Sign Up</button>
+    <button class="btn" type="submit" [disabled]="registerForm.invalid">Sign Up</button>
 
     <div>
         <p class="text"> Already have account? Then just
