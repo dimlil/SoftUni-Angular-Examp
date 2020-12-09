@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { LogoComponent } from './logo/logo.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from "@angular/forms"
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { FormsModule } from "@angular/forms"
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   exports: [
     HeaderComponent
