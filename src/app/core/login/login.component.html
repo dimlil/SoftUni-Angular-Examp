@@ -1,19 +1,19 @@
-<form action="#" method="post" class="form">
+<form action="#" method="post" class="form" #loginForm="ngForm" (ngSubmit)="loginHandler(loginForm.value)">
     <div>
         <h1 class="login">Login</h1>
     </div>
 
     <div>
-        <input type="email" id="inputUsername" name="email" placeholder="Email" required="" />
+        <input type="email" id="inputUsername" name="email" placeholder="Email" required email ngModel/>
         <label htmlFor="inputUsername">Email</label>
     </div>
 
     <div>
-        <input type="password" id="inputPassword" name="password" placeholder="Password" required="" />
+        <input type="password" id="inputPassword" name="password" placeholder="Password" required ngModel/>
         <label htmlFor="inputPassword">Password</label>
     </div>
 
-    <button class="btn" type="submit">Sign In</button>
+    <button class="btn" type="submit" [disabled]="loginForm.invalid">Sign In</button>
 
     <div>
         <p class="text"> Don't have account? Then just <a routerLink="/register">Sign Up</a></p>
