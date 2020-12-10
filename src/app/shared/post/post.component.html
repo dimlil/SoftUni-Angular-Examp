@@ -1,17 +1,8 @@
-<div class="post">
+<div class="post" *ngFor="let data of arrayWithData">
     <div class="username">
         <img class="avatar" src="../../../assets/avatar.jpg" alt="avatar" />
-        <h3>username</h3>
+        <h3>{{data.username}}</h3>
     </div>
-    <img class="postImage" alt="post-image" src="https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" />
-    <h4 class="postText"><strong>username</strong>: caption</h4>
-</div>
-
-<div class="post">
-    <div class="username">
-        <img class="avatar" src="../../../assets/avatar.jpg" alt="avatar" />
-        <h3>username</h3>
-    </div>
-    <img class="postImage" alt="post-image" src="https://www.w3schools.com/w3css/img_lights.jpg" />
-    <h4 class="postText"><strong>username</strong>: caption</h4>
+    <img class="postImage" alt="post-image" [src]="data.imgUrl" />
+    <h4 class="postText"><strong>{{data.username}}</strong>: {{data.caption}}</h4>
 </div>
