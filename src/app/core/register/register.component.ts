@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -8,12 +8,22 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private registerService: RegisterService) { }
 
   ngOnInit(): void {
   }
 
   registerHandler(formData: { username: string; email: string; password: string; rePassword: string }) {
-    console.log(formData);
+    this.registerService.setUsername(formData.username);
+    this.registerService.setEmail(formData.email);
+    this.registerService.setPassword(formData.password)
+
+    if (formData.password === formData.rePassword) {
+      this.registerService.register();
+    }
+    else{
+      alert("Error! Passwords don't match")
+    }
+
   }
 }
