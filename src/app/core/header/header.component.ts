@@ -12,11 +12,11 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) { //after nagivating chechs url and show or hide component
-        if (this.router.url==='/login'||this.router.url==='/register') {
-          this.showHide=false;
+        if (this.router.url==='/') {
+          this.showHide=true;
         }
         else{
-          this.showHide=true;
+          this.showHide=false;
         }
       }
     })
