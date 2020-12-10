@@ -10,6 +10,10 @@ export class LoadPostsForHomeService {
   arrayOfData: any[] = [];
 
   constructor() {
+    this.loadPosts();
+  }
+
+  loadPosts(){
     db.collection("posts").get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         this.arrayOfData.push(doc.data())

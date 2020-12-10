@@ -8,7 +8,6 @@ import { LoadPostsForHomeService } from 'src/app/services/load-posts-for-home.se
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  // postList: object = {};
   postList!: IPost;
   arrayWithData: any[] = [];
 
