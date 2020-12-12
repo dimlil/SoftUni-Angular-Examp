@@ -10,11 +10,13 @@ import { FormsModule } from "@angular/forms"
 import { SharedModule } from '../shared/shared.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { SearchComponent } from './search/search.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UploadComponent } from './upload/upload.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, HomeComponent, LoginComponent, RegisterComponent, LogoComponent, ErrorPageComponent, SearchComponent],
+  declarations: [HeaderComponent, HomeComponent, LoginComponent, RegisterComponent, LogoComponent, ErrorPageComponent, SearchComponent, ProfileComponent, UploadComponent],
   imports: [
     CommonModule,
     RouterModule,

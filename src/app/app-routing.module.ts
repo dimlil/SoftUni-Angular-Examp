@@ -4,8 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './core/error-page/error-page.component';
 import { HomeComponent } from './core/home/home.component';
 import { LoginComponent } from './core/login/login.component';
+import { ProfileComponent } from './core/profile/profile.component';
 import { RegisterComponent } from './core/register/register.component';
 import { SearchComponent } from './core/search/search.component';
+import { UploadComponent } from './core/upload/upload.component';
 const routes: Routes = [
   {
     path: "",
@@ -23,6 +25,14 @@ const routes: Routes = [
   {
     path: "search",
     component: SearchComponent
+  },
+  {
+    path: "profile",
+    component: ProfileComponent
+  },
+  {
+    path: "upload",
+    component: UploadComponent
   },
   {
     path: "**",
