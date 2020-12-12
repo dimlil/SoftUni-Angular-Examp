@@ -1,0 +1,63 @@
+.butn {
+  border: 1px solid #FA8A72;
+  border-radius: 5px;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  height: 25px;
+  width: 25px;
+  background-color: #FA8A72;
+}
+
+.form {
+  background-color: rgba(255, 255, 255, 0.479);
+  padding: 2%;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px !important;
+  border: solid;
+  border-radius: 1rem;
+  border-color: #FA8A72;
+  box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.712);
+
+  max-width: 700px;
+  margin: auto;
+}
+
+.uploadHeaderText {
+  width: 32%;
+  margin: auto;
+  object-fit: contain;
+  display: block;
+  font-family: cursive;
+}
+
+input {
+  width: 50%;
+  margin: auto;
+  object-fit: contain;
+  display: block;
+  margin-top: 3%;
+}
+
+.btn {
+  background-color: #FA8A72;
+  color: white !important;
+  border-color: #FA8A72 !important;
+  border-radius: 10px;
+  width: 15%;
+  margin: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.progress {
+  width: 50%;
+  margin: auto;
+  object-fit: contain;
+  display: block;
+  color: #FA8A72;
+}
+label{
+    margin-left: 45%;
+}

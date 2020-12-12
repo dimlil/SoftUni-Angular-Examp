@@ -1,1 +1,26 @@
-<p>upload works!</p>
+<form action="#" method="post" class="form" #UploadForm="ngForm" (ngSubmit)="uploadHandler(UploadForm.value)">
+    <div>
+        <h1 class="uploadHeaderText">Upload Image</h1>
+    </div>
+
+    <!-- <div>
+        <progress class={styles.progress} value={progress} max="100" />
+    </div> -->
+
+    <div>
+        <input type="text" id="inputCaption" name="caption" placeholder="Enter a caption" required ngModel/>
+        <label htmlFor="inputCaption">Caption</label>
+    </div>
+
+    <div>
+        <input type="text" id="inputCaption" name="caption" placeholder="Enter a tags" required ngModel/>
+        <label htmlFor="inputCaption">Tags</label>
+    </div>
+
+    <div>
+        <input type="file" id="inputFile" name="password" required />
+        <label htmlFor="inputFile">File</label>
+    </div>
+
+    <button class='btn' [disabled]="UploadForm.invalid">Upload</button>
+</form>
