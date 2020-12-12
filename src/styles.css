@@ -2,6 +2,6 @@
 body{
     margin: 0;
 }
-button{
+button,app-logo{
     outline-color: transparent;
 }
