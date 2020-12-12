@@ -58,3 +58,32 @@ form label {
   text-align: center;
   margin-bottom: 2%;
 }
+.post{
+  max-width: 500px;
+  border: 2px solid #eeeeee;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 45px;
+}
+.postImage{
+  width: 100%;
+  object-fit: contain;
+  border-bottom: 2px solid #eeeeee;
+  border-top: 2px solid #eeeeee;
+}
+.postText{
+  font-weight: normal;
+  padding: 20px;
+  margin: 0%;
+}
+.username{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.avatar{
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}

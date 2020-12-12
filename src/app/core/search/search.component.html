@@ -4,10 +4,21 @@
     </div>
 
     <div>
-        <input type="text" id="inputTags"name="tags" placeholder="Enter a tag" required ngModel />
+        <input type="text" id="inputTags" name="tags" placeholder="Enter a tag" required ngModel />
         <label htmlFor="inputCaption">Tag</label>
     </div>
 
     <button class="btn" type="submit" [disabled]="searchForm.invalid">Search</button>
 
 </form>
+
+<div *ngIf="show">
+    <div class="post" *ngFor="let data of arrayWithData">
+        <div class="username">
+            <img class="avatar" src="../../../assets/avatar.jpg" alt="avatar" />
+            <h3>{{data.username}}</h3>
+        </div>
+        <img class="postImage" alt="post-image" [src]="data.imgUrl" />
+        <h4 class="postText"><strong>{{data.username}}</strong>: {{data.caption}}</h4>
+    </div>
+</div>
