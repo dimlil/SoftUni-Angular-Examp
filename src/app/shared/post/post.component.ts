@@ -30,14 +30,17 @@ export class PostComponent implements OnInit, OnDestroy {
           })
         }
         else {
-          this.items = firestore.collection('posts', ref => ref.where('email', '==', auth.currentUser?.email)).valueChanges()
-          this.items.subscribe(s => {
-            s.forEach(el => {
-              console.log("start: ",this.arrayWithData);
-              this.arrayWithData.push(el);
-              console.log("end: ",this.arrayWithData);
+          if (this.router.url === '/profile') {
+            this.items = firestore.collection('posts', ref => ref.where('email', '==', auth.currentUser?.email)).valueChanges()
+            this.items.subscribe(s => {
+              s.forEach(el => {
+                console.log("start: ", this.arrayWithData);
+                this.arrayWithData.push(el);
+                console.log("end: ", this.arrayWithData);
+              })
             })
-          })
+          }
+          
         }
       }
     })

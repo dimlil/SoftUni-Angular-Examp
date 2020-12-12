@@ -1,1 +1,13 @@
-<p>search works!</p>
+<form method="post" #searchForm="ngForm" (ngSubmit)="searchHandler(searchForm.value)" class="form">
+    <div>
+        <h1 slass="searchHeaderText">Search</h1>
+    </div>
+
+    <div>
+        <input type="text" id="inputTags"name="tags" placeholder="Enter a tag" required ngModel />
+        <label htmlFor="inputCaption">Tag</label>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="searchForm.invalid">Search</button>
+
+</form>
