@@ -1,6 +1,6 @@
 <header class="header" *ngIf="showHide">
     <app-logo routerLink='/'></app-logo>
-    <div *ngIf="!isUserLogged.isLogged">
+    <div *ngIf="!isLogged">
         <button routerLink='/register'>
             <p>Sign-Up</p>
         </button>
@@ -8,7 +8,7 @@
             <p>Login</p>
         </button>
     </div>
-    <div *ngIf="isUserLogged.isLogged">
+    <div *ngIf="isLogged">
         <button (click)='signOutHaindler()' type="button">
             <p>Sign-Out</p>
         </button>

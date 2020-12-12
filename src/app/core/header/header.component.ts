@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { Router, Event, NavigationEnd } from '@angular/router';
 import { IsUserLoggedService } from 'src/app/services/is-user-logged.service';
 
@@ -7,10 +7,10 @@ import { IsUserLoggedService } from 'src/app/services/is-user-logged.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, AfterViewChecked {
+export class HeaderComponent implements OnInit, DoCheck {
+  isLogged = false;
   showHide = true;
   constructor(private router: Router, public isUserLogged: IsUserLoggedService) {
-
 
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) { //after nagivating chechs url and show or hide component
@@ -30,8 +30,9 @@ export class HeaderComponent implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
   }
-  ngAfterViewChecked() {
-    this.isUserLogged.getLocalStorage()
+
+  ngDoCheck() {
+    this.isLogged = this.isUserLogged.isLogged;
   }
 
 }

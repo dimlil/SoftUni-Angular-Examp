@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { auth } from "../../assets/firebase"
+import { IsUserLoggedService } from './is-user-logged.service';
 import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
@@ -9,7 +10,7 @@ import { LocalStorageService } from './local-storage.service';
 export class LoginService {
   private email!: string;
   private password!: string;
-  constructor(private route: Router, private localStorage: LocalStorageService) { }
+  constructor(private route: Router, private isUserLogged: IsUserLoggedService) { }
 
   setEmail(email: string) {
     this.email = email;
@@ -25,12 +26,7 @@ export class LoginService {
   login() {
     auth.signInWithEmailAndPassword(this.email, this.password)
       .then(() => {
-        this.localStorage.setItem('isLog', true)
-        console.log("done");
-
-      })
-      .then(() => {
-        this.route.navigate(['/'])
+        this.isUserLogged.login();
       })
       .catch((err) => {
         this.route.navigate(["/register"])

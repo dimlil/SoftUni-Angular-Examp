@@ -1,20 +1,31 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IsUserLoggedService {
-  isLogged: any = false;
-  constructor(private localStorage: LocalStorageService) {
-    this.isLogged = localStorage.getItem('isLog')
+  isLogged = false;
+  localStoregeIsLog:any;
+  constructor(private localStorage: LocalStorageService, private route: Router) {
+    this.localStoregeIsLog = localStorage.getItem('isLog')
+    this.getLocalStorage();
   }
   getLocalStorage() {
-    this.isLogged = localStorage.getItem('isLog')
+    if (this.localStoregeIsLog===false) {
+      this.isLogged = false;
+    }
+    else{
+      if (this.localStoregeIsLog===true) {
+        this.isLogged = true;
+      }
+    }
   }
   login() {
     this.isLogged = true;
     this.localStorage.setItem('isLog', true)
+    this.route.navigateByUrl('/')
   }
   logout() {
     this.isLogged = false;
