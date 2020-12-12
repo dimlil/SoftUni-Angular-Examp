@@ -9,6 +9,9 @@
         </button>
     </div>
     <div *ngIf="isLogged">
+        <button routerLink='/search'>
+            <p>Search</p>
+        </button>
         <button (click)='signOutHaindler()' type="button">
             <p>Sign-Out</p>
         </button>

@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit, DoCheck {
 
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) { //after nagivating chechs url and show or hide component
-        if (this.router.url === '/') {
+        if (this.router.url === '/' || this.router.url === '/search') {
           this.showHide = true;
         }
         else {

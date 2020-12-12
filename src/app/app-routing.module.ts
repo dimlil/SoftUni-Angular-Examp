@@ -5,6 +5,7 @@ import { ErrorPageComponent } from './core/error-page/error-page.component';
 import { HomeComponent } from './core/home/home.component';
 import { LoginComponent } from './core/login/login.component';
 import { RegisterComponent } from './core/register/register.component';
+import { SearchComponent } from './core/search/search.component';
 const routes: Routes = [
   {
     path: "",
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: "register",
     component: RegisterComponent
+  },
+  {
+    path: "search",
+    component: SearchComponent
   },
   {
     path: "**",

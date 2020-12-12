@@ -9,11 +9,12 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from "@angular/forms"
 import { SharedModule } from '../shared/shared.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { SearchComponent } from './search/search.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, HomeComponent, LoginComponent, RegisterComponent, LogoComponent, ErrorPageComponent],
+  declarations: [HeaderComponent, HomeComponent, LoginComponent, RegisterComponent, LogoComponent, ErrorPageComponent, SearchComponent],
   imports: [
     CommonModule,
     RouterModule,
