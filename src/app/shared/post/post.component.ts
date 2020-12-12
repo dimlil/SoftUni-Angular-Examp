@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Event, NavigationEnd, Router } from '@angular/router';
 import { IPost } from 'src/app/interfaces/post';
 import { LoadPostsForHomeService } from 'src/app/services/load-posts-for-home.service';
 
@@ -13,8 +14,9 @@ export class PostComponent implements OnInit {
 
 
   constructor(public postService: LoadPostsForHomeService) {
+    this.arrayWithData=[]
+    this.postService.getPost();
     this.arrayWithData = this.postService.arrayOfData;
-    console.log("array with data: ", this.arrayWithData)
   }
 
   ngOnInit(): void {

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "softuni-angular-examp": {
+      "hosting": {
+        "SoftUni-Angular-Examp": [
+          "softuni-angular-examp"
+        ]
+      }
+    }
+  }
+}
