@@ -1,6 +1,7 @@
 import { core } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AccessLoginAndRegisterGuard } from './access-login-and-register.guard';
 import { AccessGuard } from './access.guard';
 import { ErrorPageComponent } from './core/error-page/error-page.component';
 import { HomeComponent } from './core/home/home.component';
@@ -17,10 +18,12 @@ const routes: Routes = [
   },
   {
     path: "login",
+    canActivate:[AccessLoginAndRegisterGuard],
     component: LoginComponent
   },
   {
     path: "register",
+    canActivate:[AccessLoginAndRegisterGuard],
     component: RegisterComponent
   },
   {
