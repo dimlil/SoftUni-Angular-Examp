@@ -1,6 +1,6 @@
 import firebase from 'firebase'
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyBuoyr9Pghf2YxIiI1r3JpqULQCYogL0k4",
   authDomain: "softuni-angular-examp.firebaseapp.com",
   projectId: "softuni-angular-examp",

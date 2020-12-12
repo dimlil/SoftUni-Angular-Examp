@@ -18,7 +18,7 @@
     </div>
 
     <div>
-        <input #fileUpload (click)="fileUpload.value = null" (change)="importFile($event)" type="file" id="inputFile" name="fileName" required ngModel/>
+        <input #fileUpload (change)="importFile($event)" type="file" id="inputFile" name="fileName" required ngModel/>
 <!-- <input #fileUpload type="file" (click)="fileUpload.value = null"(change)="importFile($event)" accept="image/*"> -->
         <label htmlFor="inputFile">File</label>
     </div>
