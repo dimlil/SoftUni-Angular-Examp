@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { IPost } from 'src/app/interfaces/post';
 import { auth } from '../../../assets/firebase'
-
+import { take } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -22,17 +22,16 @@ export class PostComponent implements OnInit, OnDestroy {
       if (event instanceof NavigationEnd) {
         if (this.router.url === '/') {
           this.items = firestore.collection('posts', ref => ref.orderBy('timestamp', 'desc')).valueChanges()
-          this.items.subscribe(s => {
+          this.items.pipe(take(1)).subscribe(s => {
             s.forEach(el => {
-              // console.log(el);
               this.arrayWithData.push(el);
             })
           })
         }
         else {
           if (this.router.url === '/profile') {
-            this.items = firestore.collection('posts', ref => ref.where('email', '==', auth.currentUser?.email)).valueChanges()
-            this.items.subscribe(s => {
+            this.items = firestore.collection('posts', ref => ref.where('email', '==', auth.currentUser?.email).orderBy("timestamp",'desc')).valueChanges()
+            this.items.pipe(take(1)).subscribe(s => {
               s.forEach(el => {
                 console.log("start: ", this.arrayWithData);
                 this.arrayWithData.push(el);
