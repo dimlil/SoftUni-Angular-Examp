@@ -14,13 +14,10 @@ export class LoginService {
 
   setEmail(email: string) {
     this.email = email;
-    console.log(this.email);
 
   }
   setPassword(password: string) {
     this.password = password;
-
-    console.log(this.password);
   }
 
   login() {

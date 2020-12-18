@@ -13,17 +13,13 @@ export class UploadComponent implements OnInit {
   constructor(private uploadPic:UploadPictureService) { }
 
   ngOnInit(): void {
-    console.log(auth.currentUser);
   }
   importFile(event:any) {
 
     if (event.target.files.length == 0) {
-       console.log("No file selected!");
        return
     }
       this.file = event.target.files[0];
-      console.log("File: ",this.file.name);
-      
     }
 
   uploadHandler(formData: { caption: string, tags: string, fileName: string }) {

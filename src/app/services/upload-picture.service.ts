@@ -17,11 +17,6 @@ export class UploadPictureService {
     storage.ref(`images/${file.name}`).put(file).on(
       "state_changed",
       (snapshot) => {
-        //progress function
-        const progressing = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        )
-        // setProgress(progressing)
       },
       (err) => {
         console.log(err);
