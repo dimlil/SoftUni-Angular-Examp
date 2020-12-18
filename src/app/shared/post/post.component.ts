@@ -6,6 +6,7 @@ import { take } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { LoadPostsForHomeService } from 'src/app/services/load-posts-for-home.service';
+import { LoadPostsForProfileService } from 'src/app/services/load-posts-for-profile.service';
 
 @Component({
   selector: 'app-post',
@@ -18,7 +19,7 @@ export class PostComponent implements OnInit, OnDestroy {
   items!: Observable<any[]>;
 
 
-  constructor(private router: Router, firestore: AngularFirestore, private loadPost: LoadPostsForHomeService) {
+  constructor(private router: Router, firestore: AngularFirestore, private loadPost: LoadPostsForHomeService, private loadPostsForProfile:LoadPostsForProfileService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         if (this.router.url === '/') {
@@ -28,16 +29,10 @@ export class PostComponent implements OnInit, OnDestroy {
         }
         else {
           if (this.router.url === '/profile') {
-            this.items = firestore.collection('posts', ref => ref.where('email', '==', auth.currentUser?.email).orderBy("timestamp", 'desc')).valueChanges()
-            this.items.pipe(take(1)).subscribe(s => {
-              s.forEach(el => {
-                console.log("start: ", this.arrayWithData);
-                this.arrayWithData.push(el);
-                console.log("end: ", this.arrayWithData);
-              })
+            this.loadPostsForProfile.loadPost().subscribe(post => {
+              this.arrayWithData = post
             })
           }
-
         }
       }
     })
