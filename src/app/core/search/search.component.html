@@ -21,4 +21,7 @@
         <img class="postImage" alt="post-image" [src]="data.imgUrl" />
         <h4 class="postText"><strong>{{data.username}}</strong>: {{data.caption}}</h4>
     </div>
+    <div *ngIf="arrayWithData.length===0">
+        <h1>Noting Found! To add post: <a routerLink="/upload">Click Here</a></h1>
+    </div>
 </div>
