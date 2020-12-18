@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit, DoCheck {
 
   signOutHaindler() {
     this.isUserLogged.logout();
+    this.router.navigateByUrl('/');
   }
 
   ngOnInit(): void {
