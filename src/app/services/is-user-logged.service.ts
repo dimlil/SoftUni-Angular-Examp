@@ -8,20 +8,31 @@ import { auth } from "../../assets/firebase"
 })
 export class IsUserLoggedService {
   isLogged = false;
-  localStoregeIsLog:any;
+  localStoregeIsLog: any;
   constructor(private localStorage: LocalStorageService, private route: Router) {
     this.localStoregeIsLog = localStorage.getItem('isLog')
     this.getLocalStorage();
   }
   getLocalStorage() {
-    if (this.localStoregeIsLog===false) {
+    if (this.localStoregeIsLog === false) {
       this.isLogged = false;
     }
-    else{
-      if (this.localStoregeIsLog===true) {
+    else {
+      if (this.localStoregeIsLog === true) {
         this.isLogged = true;
       }
     }
+  }
+  returnLocalStorage(){
+    if (this.localStoregeIsLog === false) {
+      return false;
+    }
+    else {
+      if (this.localStoregeIsLog === true) {
+        return true;
+      }
+    }
+    return
   }
   login() {
     this.isLogged = true;
