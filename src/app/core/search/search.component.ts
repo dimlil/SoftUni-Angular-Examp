@@ -18,12 +18,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void { }
   searchInDB(searching: string) {
-    // this.howManyDocsHave = this.firestore.collection('posts', ref => ref.where('tags', '==', searching)).valueChanges()
-    //   .subscribe((e) => {
-    //     this.docLength = e.length
-    //   })
-    this.items = this.firestore.collection('posts', ref => ref.where('tags', '==', searching)).valueChanges()
-    // this.items.pipe(take(this.docLength)).subscribe(s => {
+    this.items = this.firestore.collection('posts', ref => ref.where('tags', '==', searching).orderBy("timestamp", 'desc')).valueChanges()
     this.items.pipe(take(1)).subscribe(s => {
       s.forEach(el => {
         this.arrayWithData.push(el);
@@ -31,6 +26,7 @@ export class SearchComponent implements OnInit {
     })
   }
   searchHandler(formData: { tags: string }) {
+    this.arrayWithData = [];
     this.show = true;
     this.searchInDB(formData.tags)
   }
