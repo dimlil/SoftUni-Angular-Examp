@@ -5,6 +5,7 @@ import { AccessLoginAndRegisterGuard } from './access-login-and-register.guard';
 import { AccessGuard } from './access.guard';
 import { ErrorPageComponent } from './core/error-page/error-page.component';
 import { HomeComponent } from './core/home/home.component';
+import { ImageComponent } from './core/image/image.component';
 import { LoginComponent } from './core/login/login.component';
 import { ProfileComponent } from './core/profile/profile.component';
 import { RegisterComponent } from './core/register/register.component';
@@ -40,6 +41,10 @@ const routes: Routes = [
     path: "upload",
     canActivate:[AccessGuard],
     component: UploadComponent
+  },
+  {
+    path: "image/:id",
+    component: ImageComponent
   },
   {
     path: "**",

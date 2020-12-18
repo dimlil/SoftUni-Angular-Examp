@@ -3,6 +3,6 @@
         <img class="avatar" src="../../../assets/avatar.jpg" alt="avatar" />
         <h3>{{data.username}}</h3>
     </div>
-    <img class="postImage" alt="post-image" [src]="data.imgUrl" />
+    <a [routerLink]="['/image',data.imgUrl]"><img class="postImage" alt="post-image" [src]="data.imgUrl" /> </a>
     <h4 class="postText"><strong>{{data.username}}</strong>: {{data.caption}}</h4>
 </div>

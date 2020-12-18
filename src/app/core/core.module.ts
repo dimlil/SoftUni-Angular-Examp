@@ -12,11 +12,12 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UploadComponent } from './upload/upload.component';
+import { ImageComponent } from './image/image.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, HomeComponent, LoginComponent, RegisterComponent, LogoComponent, ErrorPageComponent, SearchComponent, ProfileComponent, UploadComponent],
+  declarations: [HeaderComponent, HomeComponent, LoginComponent, RegisterComponent, LogoComponent, ErrorPageComponent, SearchComponent, ProfileComponent, UploadComponent, ImageComponent],
   imports: [
     CommonModule,
     RouterModule,
