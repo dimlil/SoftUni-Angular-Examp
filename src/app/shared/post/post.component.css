@@ -1,6 +1,7 @@
 .post{
     max-width: 500px;
     border: 2px solid #eeeeee;
+    border-radius: 15px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 45px;
