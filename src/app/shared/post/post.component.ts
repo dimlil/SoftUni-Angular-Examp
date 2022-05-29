@@ -9,6 +9,7 @@ import { LoadPostsForProfileService } from 'src/app/services/load-posts-for-prof
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit, OnDestroy {
+  loggedEmail = localStorage.email;
   arrayWithData: any[] = [];
 
 

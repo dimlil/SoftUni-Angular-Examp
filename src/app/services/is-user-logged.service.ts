@@ -34,9 +34,10 @@ export class IsUserLoggedService {
     }
     return
   }
-  login() {
+  login(email:string) {
     this.isLogged = true;
     this.localStorage.setItem('isLog', true)
+    this.localStorage.setItem('email', email)
     this.route.navigateByUrl('/')
   }
   logout() {

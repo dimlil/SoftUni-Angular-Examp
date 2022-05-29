@@ -23,7 +23,7 @@ export class LoginService {
   login() {
     auth.signInWithEmailAndPassword(this.email, this.password)
       .then(() => {
-        this.isUserLogged.login();
+        this.isUserLogged.login(this.email);
       })
       .catch((err) => {
         this.route.navigate(["/register"])
