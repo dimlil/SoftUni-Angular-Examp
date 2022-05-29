@@ -6,6 +6,15 @@
     margin-top: 20px;
     margin-bottom: 45px;
 }
+.postHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.buttons{
+    margin-right: 20px;
+}
 .postImage{
     width: 100%;
     object-fit: contain;
