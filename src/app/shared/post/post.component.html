@@ -5,8 +5,8 @@
             <h3>{{data.username}}</h3>
         </div>
         <div class="buttons" *ngIf="loggedEmail===data.email">
-            <button>edit</button>
-            <button>delete</button>
+            <button class="editBtn">edit</button>
+            <button class="deleteBtn">delete</button>
         </div>
     </div>
     <a [routerLink]="['/image',data.imgUrl]"><img class="postImage" alt="post-image" [src]="data.imgUrl" /> </a>

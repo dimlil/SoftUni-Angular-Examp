@@ -37,3 +37,17 @@
     width: 50px;
     border-radius: 50%;
 }
+.editBtn{
+    background-color: #3ece58;
+    padding: 15px;
+    color: white;
+    border-radius: 15px;
+    border: none;
+}
+.deleteBtn{
+    background-color: #ce4c3e;
+    padding: 15px;
+    color: white;
+    border-radius: 15px;
+    border: none;
+}
