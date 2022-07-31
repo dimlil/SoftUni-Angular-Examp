@@ -10,7 +10,7 @@ export class RegisterService {
   private username!: string;
   private email!: string;
   private password!: string;
-  constructor(private route: Router, private isUserLogged: IsUserLoggedService) {}
+  constructor(private route: Router, private isUserLogged: IsUserLoggedService) { }
 
   setUsername(username: string) {
     this.username = username;
@@ -22,20 +22,12 @@ export class RegisterService {
     this.password = password;
   }
 
-  register() {
-    auth.createUserWithEmailAndPassword(this.email, this.password)
-      .then((authUser) => {
-        authUser.user?.updateProfile({
-          displayName: this.username
-        })
-      })
-      .then(() => {
-        this.isUserLogged.login();
-      })
-      .catch((err) => {
-        this.route.navigate(["/register"])
-        alert(err.message)
-      });
+  async register() {
+    const registerUser = await auth.createUserWithEmailAndPassword(this.email, this.password);
+    await registerUser.user?.updateProfile({
+      displayName: this.username
+    });
+    this.isUserLogged.login(registerUser.user?.email!);
   }
 
 }
